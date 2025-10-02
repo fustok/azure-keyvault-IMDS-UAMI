@@ -48,10 +48,33 @@ image is pulled by the web app service container
 the py code running from inside the web app container just retrieves and display the keyvault access token and the value of the given secret 
 
 General ref:
-
 https://learn.microsoft.com/en-us/answers/questions/2076118/azure-app-with-managed-identity-enabled-cant-get-a
 https://learn.microsoft.com/en-us/azure/app-service/tutorial-custom-container?pivots=container-linux&tabs=azure-portal#configure-app-service-to-deploy-the-image-from-the-registry
 https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore?tabs=net80&pivots=development-environment-vscode
 https://learn.microsoft.com/en-us/azure/app-service/deploy-authentication-types
 
+Queries to retrieve the configured identities:
+root@xxxx:~# az login
 
+root@xxxx:~# az webapp show --resource-group rg-1234 --name  app-service-docker --query "{name: name, objectId: identity.principalId, systemIdentityEnabled: identity.type == 'SystemAssigned' || identity.type == 'SystemAssigned, UserAssigned'}"
+result:
+{
+  "name": "app-service-docker",
+  "objectId": null,
+  "systemIdentityEnabled": false
+}
+
+root@xxx:~# az webapp show --resource-group rg-1234 --name  app-service-docker --query "{name: name, systemIdentityEnabled: identity.type == 'SystemAssigned' || identity.type == 'SystemAssigned, UserAssigned', userAssignedIdentities: identity.userAssignedIdentities}"
+result:
+{
+  "name": "app-service-docker",
+  "systemIdentityEnabled": false,
+  "userAssignedIdentities": 
+  {
+    "/subscriptions/<subscription guid>/resourcegroups/rg-1234/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-1234": 
+    {
+      "clientId": "<guid>",
+      "principalId": "<guid>"
+    }
+  }
+}
