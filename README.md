@@ -8,11 +8,11 @@ In Azure portal, create a resource group hosting the below minimal artifacts:
 Form your Terminal window run the command, assuming all is in the folder "_docker-images":
 cd _docker-images
 </br>
-docker build --platform linux/amd64 --tag appsvc-keyvaultaccesstoken-custom-image .
+   docker build --platform linux/amd64 --tag appsvc-keyvaultaccesstoken-custom-image .
 </br>
-docker tag appsvc-keyvaultaccesstoken-custom-image containerregistry.azurecr.io/appsvc-keyvaultaccesstoken-custom-image:latest
+   docker tag appsvc-keyvaultaccesstoken-custom-image containerregistry.azurecr.io/appsvc-keyvaultaccesstoken-custom-image:latest
 </br>
-docker push containerregistry.azurecr.io/appsvc-keyvaultaccesstoken-custom-image:latest
+   docker push containerregistry.azurecr.io/appsvc-keyvaultaccesstoken-custom-image:latest
 </br>
 
 Configure the UAMI over the container app to read the KeyVault secrets, and get the GUID.
