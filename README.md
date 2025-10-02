@@ -48,6 +48,7 @@ image is pulled by the web app service container
 the py code running from inside the web app container just retrieves and display the keyvault access token and the value of the given secret 
 
 General ref:
+
 https://learn.microsoft.com/en-us/answers/questions/2076118/azure-app-with-managed-identity-enabled-cant-get-a
 https://learn.microsoft.com/en-us/azure/app-service/tutorial-custom-container?pivots=container-linux&tabs=azure-portal#configure-app-service-to-deploy-the-image-from-the-registry
 https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore?tabs=net80&pivots=development-environment-vscode
