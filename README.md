@@ -21,4 +21,6 @@ Add additional deployment variables for the web app service container:
 
 <img width="530" height="299" alt="image" src="https://github.com/user-attachments/assets/d1f586be-372e-4c01-8fd0-dcecb2116cab" />
 
+While running the py app, it will generate an html output showing this information:
 
+<img width="532" height="296" alt="image" src="https://github.com/user-attachments/assets/c0713bf4-05d7-4540-969c-487281e56851" />
