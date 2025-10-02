@@ -57,15 +57,20 @@ Queries to retrieve the configured identities:
 root@xxxx:~# az login
 
 root@xxxx:~# az webapp show --resource-group rg-1234 --name  app-service-docker --query "{name: name, objectId: identity.principalId, systemIdentityEnabled: identity.type == 'SystemAssigned' || identity.type == 'SystemAssigned, UserAssigned'}"
+
 result:
+
 {
   "name": "app-service-docker",
   "objectId": null,
   "systemIdentityEnabled": false
 }
 
+
 root@xxx:~# az webapp show --resource-group rg-1234 --name  app-service-docker --query "{name: name, systemIdentityEnabled: identity.type == 'SystemAssigned' || identity.type == 'SystemAssigned, UserAssigned', userAssignedIdentities: identity.userAssignedIdentities}"
+
 result:
+
 {
   "name": "app-service-docker",
   "systemIdentityEnabled": false,
