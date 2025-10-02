@@ -1,4 +1,4 @@
-# azure-keyvault-IMDS-UAMI
+# Microsoft Aure KeyVault-IMDS-UAMI
 Retrieve KeyVault secrets from container app in deployed in Microsoft Azure
 
 In Azure portal, create a resource group hosting the below minimal artifacts:
