@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 
 # Set environment variables
-ENV SSH_PASSWD=root:Docker!
+ENV SSH_PASSWD=root:<a compliant password for docker>
 ##ARG SSH_PASSWD
 ##while building docker image:
 ##docker build --build-arg SSH_PASSWD=root:Docker! --platform linux/amd64 --tag appsvc-keyvaultaccesstoken-custom-image .
