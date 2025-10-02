@@ -23,8 +23,8 @@ def get_secret_value():
             <h1>Azure Managed Identity Access Token by Fustok v.5a</h1>
     """
 
-    managed_identity_client_id = os.getenv("UAMI_CLIENT_ID") #"cc8f055e-a3cd-4493-87e7-996d772063d5"
-    keyvault_url = "https://kv-testkeyvault-01.vault.azure.net/"
+    managed_identity_client_id = os.getenv("UAMI_CLIENT_ID") #"UAMI Guid"
+    keyvault_url = "https://<az keyvault>.vault.azure.net/"
     secret_name = "sec01test"
 
     try:
@@ -54,4 +54,5 @@ def get_secret_value():
     return response
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=8000)
