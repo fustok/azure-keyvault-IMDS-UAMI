@@ -8,8 +8,8 @@ ENV SSH_PASSWD=root:Docker!
 
 ##via terminal how to build, tag, and push in Azure Container Registry:
 ##docker build --platform linux/amd64 --tag appsvc-keyvaultaccesstoken-custom-image .
-##docker tag appsvc-keyvaultaccesstoken-custom-image containerregistryfc01.azurecr.io/appsvc-keyvaultaccesstoken-custom-image:latest
-##docker push containerregistryfc01.azurecr.io/appsvc-keyvaultaccesstoken-custom-image:latest
+##docker tag appsvc-keyvaultaccesstoken-custom-image <az container>.azurecr.io/appsvc-keyvaultaccesstoken-custom-image:latest
+##docker push <az container>.azurecr.io/appsvc-keyvaultaccesstoken-custom-image:latest
 
 # Set working directory
 WORKDIR /app
